@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  jarvis:
+    container_name: jarvis
+    image: cyranochen/jarvis:latest
+    ports:
+      - "8000:8080"
+    volumes: #dev
+      - ./logs:/home/code/logs
+      - ./package.json:/home/code/package.json
+      - ./public:/home/code/public 
+      - ./app:/home/code/app
+      - ./.env:/home/code/.env
+      - ./index.js:/home/code/index.js
+
+    command: npm start
