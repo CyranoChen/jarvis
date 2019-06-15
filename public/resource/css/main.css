@@ -1,0 +1,27 @@
+/* twitter-bootstrap */
+@import "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css";
+
+/* font-awesome */
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+
+/* admin-lte */
+@import "https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.10/css/AdminLTE.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.10/css/skins/_all-skins.min.css";
+
+.users-list>li {
+    width: 16%;
+}
+
+.users-list>li img {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+}
+
+.users-list>li img.error {
+    border: 3px dashed red;
+}
+
+.users-list>li a {
+    margin: 5px;
+}
