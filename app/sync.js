@@ -9,14 +9,14 @@ module.exports = {
 const _configs = config.getConfigs();
 
 const headers = {
-    'APIKey': _configs.LEONARDO.APIKEY,
+    'APIKey': _configs.BACKEND.APIKEY,
     'Accept': 'application/json'
     // 'content-type' : 'multipart/form-data'
 };
 
 async function getCameraVideo() {
     return new Promise((resolve, reject) => {
-        req.post(_configs.LEONARDO.SIMILARITYSCORING_APIURL, {
+        req.post(_configs.BACKEND.APIURL + '/', {
             formData: {
                 texts: JSON.stringify(vectors),
                 options: JSON.stringify({ "numSimilarVectors": numSimilarVectors })

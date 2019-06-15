@@ -115,7 +115,8 @@
                     <div class="col-md-12">
                         <div class="box">
                             <div class="box-header with-border">
-                                <h3 class="box-title"><i class="fa fa-android" aria-hidden="true"></i> Robot Broadcast
+                                <h3 class="box-title"><i class="fa fa-android" aria-hidden="true"></i> Robot
+                                    <a><strong>JARVIS</strong></a> Broadcast
                                 </h3>
 
                                 <div class="box-tools pull-right">
@@ -144,7 +145,7 @@
                                     <div class="col-md-7">
                                         <p>
                                             <strong><i class="fa fa-clock-o" aria-hidden="true"></i> Camera Local Time:
-                                                <a>2019/06/15 13:46:57</a></strong>
+                                                <a id="datetime-now">2019/06/15 13:46:57</a></strong>
                                         </p>
                                         <div class="chart">
                                             <img src="./resource/img/temp-camera.jpg" style="width: 100%" />
@@ -214,12 +215,13 @@
                                                 <!-- Message. Default to the left -->
                                                 <div class="direct-chat-msg">
                                                     <div class="direct-chat-info clearfix">
-                                                        <span class="direct-chat-name pull-left">Alexander
-                                                            Pierce</span>
-                                                        <span class="direct-chat-timestamp pull-right">2019/6/16 14:01:01</span>
+                                                        <span class="direct-chat-name pull-left">Robot Jarvis</span>
+                                                        <span class="direct-chat-timestamp pull-right">2019/6/16
+                                                            14:01:01</span>
                                                     </div>
                                                     <!-- /.direct-chat-info -->
-                                                    <img class="direct-chat-img" src="./resource/img/avatar-jarvis.png" alt="jarvis">
+                                                    <img class="direct-chat-img" src="./resource/img/avatar-jarvis.png"
+                                                        alt="jarvis">
                                                     <!-- /.direct-chat-img -->
                                                     <div class="direct-chat-text">
                                                         Is this template really for free? That's unbelievable!
@@ -231,12 +233,13 @@
                                                 <!-- Message to the right -->
                                                 <div class="direct-chat-msg right">
                                                     <div class="direct-chat-info clearfix">
-                                                        <span class="direct-chat-name pull-right">Sarah
-                                                            Bullock</span>
-                                                        <span class="direct-chat-timestamp pull-left">2019/6/16 14:01:01</span>
+                                                        <span class="direct-chat-name pull-right">Human Commander</span>
+                                                        <span class="direct-chat-timestamp pull-left">2019/6/16
+                                                            14:01:01</span>
                                                     </div>
                                                     <!-- /.direct-chat-info -->
-                                                    <img class="direct-chat-img" src="./resource/img/avatar-human.png" alt="human">
+                                                    <img class="direct-chat-img" src="./resource/img/avatar-human.png"
+                                                        alt="human">
                                                     <!-- /.direct-chat-img -->
                                                     <div class="direct-chat-text">
                                                         You better believe it!
@@ -248,12 +251,13 @@
                                                 <!-- Message. Default to the left -->
                                                 <div class="direct-chat-msg">
                                                     <div class="direct-chat-info clearfix">
-                                                        <span class="direct-chat-name pull-left">Alexander
-                                                            Pierce</span>
-                                                        <span class="direct-chat-timestamp pull-right">2019/6/16 14:01:01</span>
+                                                        <span class="direct-chat-name pull-left">Robot Jarvis</span>
+                                                        <span class="direct-chat-timestamp pull-right">2019/6/16
+                                                            14:01:01</span>
                                                     </div>
                                                     <!-- /.direct-chat-info -->
-                                                    <img class="direct-chat-img" src="./resource/img/avatar-jarvis.png" alt="jarvis">
+                                                    <img class="direct-chat-img" src="./resource/img/avatar-jarvis.png"
+                                                        alt="jarvis">
                                                     <!-- /.direct-chat-img -->
                                                     <div class="direct-chat-text">
                                                         Working with AdminLTE on a great new app! Wanna join?
@@ -265,12 +269,13 @@
                                                 <!-- Message to the right -->
                                                 <div class="direct-chat-msg right">
                                                     <div class="direct-chat-info clearfix">
-                                                        <span class="direct-chat-name pull-right">Sarah
-                                                            Bullock</span>
-                                                        <span class="direct-chat-timestamp pull-left">2019/6/16 14:01:01</span>
+                                                        <span class="direct-chat-name pull-right">Human Commander</span>
+                                                        <span class="direct-chat-timestamp pull-left">2019/6/16
+                                                            14:01:01</span>
                                                     </div>
                                                     <!-- /.direct-chat-info -->
-                                                    <img class="direct-chat-img" src="./resource/img/avatar-human.png" alt="human">
+                                                    <img class="direct-chat-img" src="./resource/img/avatar-human.png"
+                                                        alt="human">
                                                     <!-- /.direct-chat-img -->
                                                     <div class="direct-chat-text">
                                                         I would love to.
@@ -358,9 +363,9 @@
                                 </div>
                             </div>
                             <!-- /.box-header -->
-                            <div class="box-body no-padding">
+                            <div class="box-body no-padding" id="pnl-cases-list">
                                 <ul class="users-list clearfix">
-                                    <li>
+                                    <!-- <li>
                                         <img src="./resource/img/temp-case1.jpg" alt="case">
                                         <a class="users-list-name" href="#">
                                             <span class="label label-success">DRY 0.89</span> Bulbasaur</a>
@@ -395,7 +400,7 @@
                                         <a class="users-list-name" href="#"><span class="label label-warning">WET
                                                 0.95</span> Pikachu</a>
                                         <span class="users-list-date">2019/6/15 12:47:35</span>
-                                    </li>
+                                    </li> -->
                                 </ul>
                                 <!-- /.users-list -->
                             </div>
@@ -425,6 +430,33 @@
 
     <script type="text/javascript">
         $(function () {
+            // Datetime Now
+            function checkTime(i) {
+                if (i < 10) {
+                    i = "0" + i;
+                }
+                return i;
+            }
+
+            function startTime() {
+                var today = new Date();
+                var y = today.getFullYear();
+                var mon = today.getMonth() + 1;
+                var d = today.getDate();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                var s = today.getSeconds();
+                // add a zero in front of numbers<10
+                m = checkTime(m);
+                s = checkTime(s);
+                $("#datetime-now").text(`${y}/${mon}/${d} ${h}:${m}:${s}`);
+                t = setTimeout(function () {
+                    startTime()
+                }, 1000);
+            }
+
+            startTime();
+
             //-------------
             //- PIE CHART -
             //-------------
@@ -443,7 +475,7 @@
                             randomScalingFactor(),
                             randomScalingFactor(),
                         ],
-                        backgroundColor: ['#f39c12','#00a65a','#00c0ef','#dd4b39'],
+                        backgroundColor: ['#f39c12', '#00a65a', '#00c0ef', '#dd4b39'],
                     }],
                     labels: [
                         'Wet',
@@ -466,9 +498,39 @@
                 }
             };
 
-            var ctx = document.getElementById('pieChart').getContext('2d');
+            var ctx = $("#pieChart").get(0).getContext('2d');
             window.myDoughnut = new Chart(ctx, config);
             myDoughnut.update();
+
+
+            // Get Configs
+            $.post('/api/init', function (d, status) {
+                if (status === 'success' && d) {
+                    console.log(d);
+                    $("#pnl-cases-list>ul").empty();
+                    $.each(d.data.CASE, function (i, obj) {
+                        let item = $("<li />")
+                            .append($("<img />", {
+                                src: `./resource/img/${obj.IMG}`,
+                                class: obj.ERROR ? 'error' : ''
+                            }))
+                            .append($(
+                                `<a><span class="label label-danger">${obj.CATEGORY} ${obj.CONFIDENCE}</span> ${obj.NAME}</a>`, {
+                                    class: "users-list-name",
+                                    href: "#"
+                                }
+                            ))
+                            .append($(
+                                `<span>${obj.TIMESTAMP}</span>`, {
+                                    class: "users-list-date"
+                                }
+                            ));
+                        $("#pnl-cases-list>ul").append(item);
+                    });
+                } else {
+                    alert(status);
+                }
+            });
         });
     </script>
 </body>
