@@ -7,7 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>J.A.R.V.I.S</title>
     <link rel="shortcut icon" href="/favicon" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+    <link rel="stylesheet" href="./resource/css/Chart.min.css">
     <link rel="stylesheet" href="./resource/css/main.css" />
 </head>
 
@@ -118,7 +118,6 @@
                                 <h3 class="box-title"><i class="fa fa-android" aria-hidden="true"></i> Robot
                                     <a><strong>JARVIS</strong></a> Broadcast
                                 </h3>
-
                                 <div class="box-tools pull-right">
                                     <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
                                             class="fa fa-minus"></i>
@@ -148,7 +147,8 @@
                                                 <a id="datetime-now">2019/06/15 13:46:57</a></strong>
                                         </p>
                                         <div class="chart">
-                                            <img src="./resource/img/temp-camera.jpg" style="width: 100%" />
+                                            <img id="img-camera" src="./resource/img/temp-camera.jpg"
+                                                style="width: 100%; max-height: 460px" />
                                         </div>
                                         <!-- /.chart-responsive -->
                                     </div>
@@ -424,8 +424,8 @@
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="./resource/js/jquery.min.js"></script>
+    <script src="./resource/js/Chart.min.js"></script>
     <script src="./resource/js/main.js"></script>
 
     <script type="text/javascript">
@@ -456,6 +456,23 @@
             }
 
             startTime();
+
+            // websocket
+            var $cam = $("#img-camera");
+            var ws = new WebSocket("ws://192.168.199.241:50010/web");
+            ws.onmessage = () => {
+                $cam.prop('src', event.data);
+            }
+            ws.onclose = () => {
+                if (this._reconnent) {
+                    let interv = this.generateInterval(this._attempt);
+                    this._attempt++;
+                    let own = this;
+                    setTimeout(() => {
+                        own.tryConnect()
+                    }, interv);
+                }
+            }
 
             //-------------
             //- PIE CHART -
