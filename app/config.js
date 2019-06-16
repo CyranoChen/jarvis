@@ -15,52 +15,58 @@ module.exports = {
             },
             "CASE": [
                 {
-                    "IMG": "temp-case1.jpg",
-                    "NAME": "Bulbasaur",
-                    "TIMESTAMP": "2019/6/15 12:47:35",
+                    "IMG": "case1.jpg",
+                    "NAME": "baby diaper",
+                    "TIMESTAMP": "2019/6/16 12:47:14",
                     "CATEGORY": "DRY",
                     "CONFIDENCE": 0.89,
-                    "ERROR": false
+                    "ERROR": false,
+                    "STYLE": "warning"
                 },
                 {
-                    "IMG": "temp-case2.jpg",
-                    "NAME": "Charmander",
-                    "TIMESTAMP": "2019/6/15 12:47:35",
+                    "IMG": "case2.jpg",
+                    "NAME": "banana peel",
+                    "TIMESTAMP": "2019/6/16 09:37:35",
                     "CATEGORY": "WET",
                     "CONFIDENCE": 0.86,
-                    "ERROR": false
+                    "ERROR": false,
+                    "STYLE": "success"
                 },
                 {
-                    "IMG": "temp-case3.jpg",
-                    "NAME": "Squirtle",
-                    "TIMESTAMP": "2019/6/15 12:47:35",
+                    "IMG": "case3.jpg",
+                    "NAME": "plastic bag",
+                    "TIMESTAMP": "2019/6/15 23:42:35",
                     "CATEGORY": "RECYCLABLE",
                     "CONFIDENCE": 0.45,
-                    "ERROR": true
+                    "ERROR": true,
+                    "STYLE": "info"
                 },
                 {
-                    "IMG": "temp-case4.jpg",
-                    "NAME": "Caterpie",
-                    "TIMESTAMP": "2019/6/15 12:47:35",
+                    "IMG": "case4.jpg",
+                    "NAME": "cigarette end",
+                    "TIMESTAMP": "2019/6/15 22:17:35",
                     "CATEGORY": "HAZARDOUS",
                     "CONFIDENCE": 0.34,
-                    "ERROR": true
+                    "ERROR": true,
+                    "STYLE": "danger"
                 },
                 {
-                    "IMG": "temp-case5.jpg",
-                    "NAME": "Rattata",
-                    "TIMESTAMP": "2019/6/15 12:47:35",
+                    "IMG": "case5.jpg",
+                    "NAME": "battery",
+                    "TIMESTAMP": "2019/6/15 21:13:35",
                     "CATEGORY": "HAZARDOUS",
                     "CONFIDENCE": 0.78,
-                    "ERROR": false
+                    "ERROR": false,
+                    "STYLE": "danger"
                 },
                 {
-                    "IMG": "temp-case6.jpg",
-                    "NAME": "Pikachu",
-                    "TIMESTAMP": "2019/6/15 12:47:35",
+                    "IMG": "case6.jpg",
+                    "NAME": "cake",
+                    "TIMESTAMP": "2019/6/15 20:00:35",
                     "CATEGORY": "WET",
                     "CONFIDENCE": 0.95,
-                    "ERROR": false
+                    "ERROR": false,
+                    "STYLE": "success"
                 },
             ]
         };

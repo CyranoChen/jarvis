@@ -24,4 +24,5 @@
 
 .users-list>li a {
     margin: 5px;
+    display: block;
 }
